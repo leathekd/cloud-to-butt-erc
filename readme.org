@@ -1,0 +1,50 @@
+* cloud-to-butt-erc
+
+In the spirit of [[https://github.com/panicsteve/cloud-to-butt][the cloud-to-butt extension for Chrome]] here is a
+cloud-to-butt module for ERC.  This will replace all instances of the
+phrase 'the cloud' with 'my butt'.  Also, by default, as this is
+interpersonal communication, the replaced instances are surrounded by
+the ~ character so there is less confusion about why people keep
+mentioning their butts.
+
+You can disable this behavior with:
+#+BEGIN_SRC emacs-lisp
+(setq cloud-to-butt-replacement-decoration "")
+#+END_SRC
+
+** Installation
+*** Via Package.el (recommended)
+Add Marmalade or Melpa as a package archive source 
+in ~/.emacs.d/init.el:
+
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(package-initialize)
+#+END_SRC
+
+or
+
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+#+END_SRC
+
+Then you can install it:
+
+#+BEGIN_SRC emacs-lisp
+M-x package-refresh-contents
+M-x package-install RET cloud-to-butt-erc RET
+#+END_SRC
+
+*** Manually (via git)
+Download the source or clone the repo and add the following 
+to ~/.emacs.d/init.el:
+
+#+BEGIN_EXAMPLE
+(add-to-list 'load-path "path/to/cloud-to-butt-erc")
+(require 'cloud-to-butt-erc)
+#+END_EXAMPLE
